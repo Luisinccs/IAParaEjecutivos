@@ -1,0 +1,103 @@
+/* ==========================================================================
+   1. DECLARACIÓN DE PALETAS BASE (TOKENS CRUDOS)
+   ========================================================================== */
+
+:root {
+  /* 1.1. Paleta Primaria (Azul) */
+  --paleta-primaria-50: #E3F2FD;
+  --paleta-primaria-100: #BBDEFB;
+  --paleta-primaria-200: #90CAF9;
+  --paleta-primaria-300: #64B5F6;
+  --paleta-primaria-400: #42A5F5;
+  --paleta-primaria-500: #2196F3; /* BASE */
+  --paleta-primaria-600: #1E88E5;
+  --paleta-primaria-700: #1976D2;
+  --paleta-primaria-800: #1565C0;
+  --paleta-primaria-900: #0D47A1;
+  --paleta-primaria-950: #08378A;
+
+  /* 1.2. Paleta Secundaria/Acento (Ámbar/Naranja) */
+  --paleta-secundaria-50: #FFF8E1;
+  --paleta-secundaria-100: #FFECB3;
+  --paleta-secundaria-200: #FFE082;
+  --paleta-secundaria-300: #FFD54F;
+  --paleta-secundaria-400: #FFCA28;
+  --paleta-secundaria-500: #FFC107; /* BASE */
+  --paleta-secundaria-600: #FFB300;
+  --paleta-secundaria-700: #FFA000;
+  --paleta-secundaria-800: #FF8F00;
+  --paleta-secundaria-900: #FF6F00;
+  --paleta-secundaria-950: #E65100;
+
+  /* 1.3. Paleta Neutra (Gris) */
+  --paleta-neutra-50: #FAFAFA;
+  --paleta-neutra-100: #F5F5F5;
+  --paleta-neutra-200: #EEEEEE;
+  --paleta-neutra-300: #E0E0E0;
+  --paleta-neutra-400: #BDBDBD;
+  --paleta-neutra-500: #9E9E9E; /* BASE */
+  --paleta-neutra-600: #757575;
+  --paleta-neutra-700: #616161;
+  --paleta-neutra-800: #424242;
+  --paleta-neutra-900: #212121;
+  --paleta-neutra-950: #121212;
+
+  /* 1.4. Paletas de Estado (Éxito, Error, etc.) */
+  --paleta-exito-200: #A5D6A7;
+  --paleta-exito-700: #388E3C;
+  --paleta-error-200: #EF9A9A;
+  --paleta-error-700: #D32F2F;
+}
+
+/* ==========================================================================
+   2. TOKENS SEMÁNTICOS PARA MODO CLARO (POR DEFECTO)
+   ========================================================================== */
+
+:root {
+  --color-fondo-principal: var(--paleta-neutra-50);
+  --color-fondo-tarjeta: #FFFFFF;
+  --color-texto-principal: var(--paleta-neutra-950);
+  --color-texto-secundario: var(--paleta-neutra-700);
+  --color-texto-inhabilitado: var(--paleta-neutra-400);
+  --color-interactivo-base: var(--paleta-primaria-700);
+  --color-interactivo-hover: var(--paleta-primaria-800);
+  --color-boton-primario-fondo: var(--paleta-primaria-700);
+  --color-boton-primario-texto: #FFFFFF;
+  --color-estado-exito-fondo: var(--paleta-exito-700);
+  --color-estado-error-fondo: var(--paleta-error-700);
+  --color-estado-advertencia-fondo: var(--paleta-secundaria-700);
+  --color-estado-informacion-fondo: var(--paleta-primaria-700);
+  --color-acento-puerta-de-enlace: var(--paleta-secundaria-800);
+}
+
+/* ==========================================================================
+   3. TOKENS SEMÁNTICOS PARA MODO OSCURO
+   ========================================================================== */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-fondo-principal: var(--paleta-neutra-950);
+    --color-fondo-tarjeta: var(--paleta-neutra-900);
+    --color-texto-principal: var(--paleta-neutra-50);
+    --color-texto-secundario: var(--paleta-neutra-400);
+    --color-texto-inhabilitado: var(--paleta-neutra-600);
+    --color-interactivo-base: var(--paleta-primaria-300);
+    --color-interactivo-hover: var(--paleta-primaria-400);
+    --color-boton-primario-fondo: var(--paleta-primaria-300);
+    --color-boton-primario-texto: var(--paleta-neutra-900);
+    --color-estado-exito-fondo: var(--paleta-exito-200);
+    --color-estado-error-fondo: var(--paleta-error-200);
+    --color-estado-advertencia-fondo: var(--paleta-secundaria-300);
+    --color-estado-informacion-fondo: var(--paleta-primaria-300);
+    --color-acento-puerta-de-enlace: var(--paleta-secundaria-300);
+  }
+}
+
+/* ==========================================================================
+   4. APLICACIÓN GENERAL DE COLORES
+   ========================================================================== */
+
+body {
+  background-color: var(--color-fondo-principal);
+  color: var(--color-texto-principal);
+}
