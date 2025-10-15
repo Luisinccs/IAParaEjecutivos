@@ -1,0 +1,92 @@
+/* Bloque 1: Importación de Fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap');
+
+/* Bloque 2: Variables Raíz */
+:root {
+  --font-family-headings: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --font-family-body: 'Merriweather', Georgia, 'Times New Roman', Times, serif;
+  --font-size-base: 16px; /* Define la base para unidades rem (1rem = 16px) */
+}
+
+/* Bloque 3: Estilos Generales */
+body {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-base);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Bloque 4: Jerarquía Tipográfica */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-headings);
+  line-height: 1.2;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 4vw + 1rem, 4rem); /* Escalado fluido y accesible */
+  font-weight: 700;
+}
+
+h2 {
+  font-size: clamp(2rem, 3vw + 1rem, 3rem);
+  font-weight: 600;
+}
+
+h3 {
+  font-size: clamp(1.75rem, 2.5vw + 1rem, 2.5rem);
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+h5 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+h6 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Bloque 5: Estilos Adicionales */
+p {
+  font-weight: 400;
+  margin-bottom: 1.25em;
+}
+
+/* Párrafo introductorio o destacado */
+.lead {
+  font-size: 1.15rem;
+  font-weight: 700; /* Merriweather no tiene peso 600, se usa 700 como el más cercano */
+  line-height: 1.7;
+}
+
+a {
+  text-decoration: none;
+  font-weight: 700; /* Destaca los enlaces en el cuerpo del texto */
+}
+
+strong {
+  font-weight: 700;
+}
+
+em, cite {
+  font-style: italic;
+  font-weight: 400;
+}
+
+ul, ol {
+  margin-bottom: 1.25em;
+  padding-left: 1.5em;
+}
+
+li {
+  margin-bottom: 0.5em;
+}

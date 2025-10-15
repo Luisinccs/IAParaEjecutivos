@@ -1,0 +1,187 @@
+/* 2025-10-14 */
+
+/* === layout-general.css ===
+ * Estilos de layout para la estructura general de la página.
+ * Mobile First.
+ */
+
+/* ------------------------------------- */
+/* #region LAYOUT - Sticky Footer */
+/* ------------------------------------- */
+
+/* El <body> se convierte en un contenedor Flex para el layout vertical */
+body {
+    display: flex;
+    flex-direction: column; /* Apila los elementos verticalmente (Header, Main, Footer) */
+    min-height: 100vh; /* Asegura que el body ocupe al menos el alto total del viewport */
+    margin: 0; /* Elimina el margen por defecto del body */
+}
+
+/* El contenido principal debe crecer y ocupar el espacio disponible */
+#page-content-wrapper {
+    flex-grow: 1; /* Esto empuja el footer hacia abajo */
+    padding: 20px; /* Ejemplo de padding para el contenido */
+}
+
+/* #endregion LAYOUT - Sticky Footer */
+
+/* ------------------------------------- */
+/* #region LAYOUT - Mobile First (Base) */
+/* ------------------------------------- */
+
+/* Header - Distribución base (Mobile) */
+header {
+    display: flex; /* Permite la distribución de elementos en línea */
+    align-items: center; /* Alineación vertical */
+    padding: 10px;
+    /* ... (resto de los estilos del header) ... */
+}
+
+/* Título (Mobile) - ocupa el espacio restante */
+.header-title-mobile {
+    flex-grow: 1; /* Crece para ocupar el espacio disponible */
+}
+
+/* Título (Desktop) - por defecto, oculto en móvil */
+.header-title-desktop {
+    display: none;
+}
+
+/* Contenedor de iconos (Mobile) */
+.header-icons-mobile {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* Iconos de Desktop - por defecto, ocultos en móvil */
+.header-desktop-icons {
+    display: none;
+}
+
+/* Navegación Regular (Desktop) - por defecto, oculta en móvil */
+.nav-items-regular {
+    display: none;
+}
+
+/* Navegación Móvil - controlada por clase JS/activación */
+.nav-items-mobile {
+    /* Ocupa el ancho completo, colocado debajo de la barra principal */
+    position: absolute;
+    top: 60px; /* Ajustar según altura real del header */
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+/* Ítems de la lista de navegación para ambos modos */
+.nav-items-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Items en móvil - dispuestos verticalmente */
+.header-mobile .nav-items-list li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Menú Hamburguesa - visible en móvil */
+.hamburger-menu-icon {
+    display: block;
+    cursor: pointer;
+    font-size: 24px;
+    border: none;
+    background: none;
+    padding: 0;
+}
+
+/* Footer style */
+#page-footer {
+    padding: 20px;
+    text-align: center;
+    /* Background color para que sea visible (manejado por css colores) */
+    background-color: #f0f0f0; 
+}
+
+/* #endregion LAYOUT - Mobile First (Base) */
+
+/* ------------------------------------- */
+/* #region POPUP LISTS - (e.g. Languages/Mobile Nav) */
+/* ------------------------------------- */
+
+/* Popups - Ocultos por defecto */
+.popup-list {
+    display: none;
+    /* Estilos de posicionamiento para que aparezca como un popup */
+    position: absolute;
+    /* Ajustar top/left/z-index según la ubicación deseada */
+    background-color: white; /* Debe ser manejado por el CSS de colores */
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-width: 120px;
+}
+
+/* Activación del Popup */
+.popup-list.is-active {
+    display: block;
+}
+
+/* #endregion POPUP LISTS */
+
+/* ------------------------------------- */
+/* #region ADAPTIVE - Desktop (min-width: 768px) */
+/* ------------------------------------- */
+
+@media (min-width: 768px) {
+    /* Ocultar elementos móviles y mostrar desktop */
+    .header-mobile {
+        display: none;
+    }
+    .header-desktop {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        gap: 20px; /* Espacio entre el título, nav y iconos */
+    }
+
+    /* Título (Desktop) - visible */
+    .header-title-desktop {
+        display: block;
+        flex-grow: 1; /* Ocupa el espacio restante */
+    }
+
+    /* Navegación Regular (Desktop) - visible y en línea */
+    .nav-items-regular {
+        display: flex; /* Muestra los ítems en línea */
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Ítems de navegación en Desktop - dispuestos horizontalmente */
+    .header-desktop .nav-items-list {
+        display: flex;
+        gap: 20px;
+    }
+    
+    .header-desktop .nav-items-list li {
+        padding: 0;
+        border-bottom: none;
+    }
+
+    /* Ocultar elementos específicos de móvil */
+    .hamburger-menu-icon,
+    .nav-items-mobile,
+    .header-icons-mobile {
+        display: none;
+    }
+
+    /* Iconos de Desktop - visible */
+    .header-desktop-icons {
+        display: flex;
+        gap: 10px;
+    }
+}
+
+/* #endregion ADAPTIVE - Desktop */
